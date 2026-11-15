@@ -1,0 +1,33 @@
+$primary-yellow: #e0ff68;
+
+%common-h1 {
+    font-family: 'Inter', Arial, sans-serif;
+    font-weight: 700;
+}
+
+h1 {
+    @extend %common-h1;
+}
+
+.btn {
+    background-color: $primary-yellow;
+}
+
+ul {
+    li {
+        a:hover {
+            background-color: $primary-yellow;
+        }
+    }
+}
+
+//@mixin - simply pass in a few propteries 
+@mixin dynamicRotate($value) {
+    -webkit-transform: $value;
+    -ms-transform: $value;
+    transform: $value;
+}
+
+.logo {
+    @include dynamicRotate(rotate(0deg));
+}

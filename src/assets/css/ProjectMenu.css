@@ -1,0 +1,295 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+img.menu-icon {
+    padding: 8px;
+}
+    
+    .menu-float {
+        position: fixed;
+        left: 0px;
+        width: 100%;
+        z-index:11;
+
+    }
+    .menu-float.bottom {
+        bottom: 20px;
+    }
+    .menu-float .menu-float-inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .menu-float .menu-float-wrap nav {
+        background: transparent;
+        padding: 0;
+    }
+    .menu-float .menu-float-wrap [data-testid=flowbite-navbar-collapse] {
+        @apply p-[10px] shadow bg-black/70 dark:bg-black border-gray-dark rounded-[10px] items-center ;
+    }
+    .menu-float .menu-float-wrap [data-testid=flowbite-navbar-collapse] ul > div {
+        @apply flex flex-col items-center gap-[8px] h-[85px] bg-black/50 rounded-[10px] p-[8px] mr-[4px] ml-[4px]
+    }
+    .menu-float .menu-float-wrap [data-testid=flowbite-navbar-collapse] ul > div:first-child {
+        margin-left: 0px;
+    }
+    .menu-float .menu-float-wrap [data-testid=flowbite-navbar-collapse] ul > div .title-container p  {
+        @apply text-[10px]
+
+    }
+    .menu-float .menu-float-wrap [data-testid=flowbite-navbar-collapse] ul > div .button-container  {
+        @apply flex gap-[8px]
+
+    }
+    .menu-float .menu-float-wrap [data-testid=flowbite-navbar-collapse] ul > div a {
+        display: block;
+    }
+    .menu-float .menu-float-wrap svg, .menu-float .menu-float-wrap img {
+        @apply h-6 dark:text-white
+    }
+    .menu-float .menu-float-wrap a  {
+        @apply text-white p-[10px] border bg-gray-dark/10 border-gray-dark rounded-[10px] transition;
+    }
+    .menu-float .menu-float-wrap a.active, .menu-float .menu-float-wrap a:hover, .liquid-wrapper a:active {
+        @apply text-white transition border-primary cursor-pointer
+    }
+
+
+
+       /* Liquid Glass Menu */
+.menu-dock {
+    position: fixed;
+    z-index: 9999;
+    bottom: 0px;
+    right: 50%;
+    transform: translate(50%,-50%);
+}
+    .menu-dock ul {
+    padding: 0px;
+}
+ .liquid-menu {
+    --c-glass: #bbbbbc;
+    --c-light: #fff;
+    --c-dark: #000;
+    --glass-reflex-dark: 1;
+    --glass-reflex-light: 1;
+    --saturation: 150%;
+
+ } 
+.liquid-menu nav {
+        @apply border-none bg-none dark:bg-transparent p-0 
+}
+ /*.liquid-menu .button-section {
+    border: 1px solid #b4c5d0;
+    border-radius: 10px;
+    padding: 10px;
+    background: #f3f4f5ba;
+    box-shadow: inset 0 0 0 1px
+      color-mix(
+        in srgb,
+        var(--c-light) calc(var(--glass-reflex-light) * 10%),
+        transparent
+      ),
+    inset 1.8px 3px 0px -2px color-mix(in srgb, var(--c-light)
+          calc(var(--glass-reflex-light) * 90%), transparent),
+    inset -2px -2px 0px -2px color-mix(in srgb, var(--c-light)
+          calc(var(--glass-reflex-light) * 80%), transparent),
+    inset -3px -8px 1px -6px color-mix(in srgb, var(--c-light)
+          calc(var(--glass-reflex-light) * 60%), transparent),
+    inset -0.3px -1px 4px 0px
+      color-mix(
+        in srgb,
+        var(--c-dark) calc(var(--glass-reflex-dark) * 12%),
+        transparent
+      ),
+    inset -1.5px 2.5px 0px -2px
+      color-mix(
+        in srgb,
+        var(--c-dark) calc(var(--glass-reflex-dark) * 10%),
+        transparent
+      ),
+    inset 0px 3px 4px -2px color-mix(in srgb, var(--c-dark)
+          calc(var(--glass-reflex-dark) * 20%), transparent),
+    inset 2px -6.5px 1px -4px
+      color-mix(
+        in srgb,
+        var(--c-dark) calc(var(--glass-reflex-dark) * 10%),
+        transparent
+      ),
+    0px 1px 5px 0px
+      color-mix(
+        in srgb,
+        var(--c-dark) calc(var(--glass-reflex-dark) * 10%),
+        transparent
+      ),
+    0px 6px 16px 0px
+      color-mix(
+        in srgb,
+        var(--c-dark) calc(var(--glass-reflex-dark) * 8%),
+        transparent
+      )
+    
+}*/
+  .liquid-menu .button-container {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    justify-content: center;
+    gap: 8px;
+    flex-direction: row;
+}
+.liquid-menu a {
+    @apply flex h-[45px] w-[45px] border border-gray rounded-xs ;
+    background: #ffffff80;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
+    align-items: center;
+    justify-content: center;
+ }
+
+ .liquid-menu a.active, .liquid-menu a:hover {
+    @apply border-gray bg-white
+ }
+
+.liquid-menu a img {
+    width: 100%;
+}
+
+  .liquid-menu .title-container {
+    margin-top: 8px;
+  }
+.liquid-menu .title-container p {
+    font-size:12px;
+    margin-bottom: 0px;
+    color:#2d353a;
+    text-align:center;
+}
+
+
+.liquid-menu .liquidGlass-wrapper.dock {
+     cursor: pointer;
+   position: relative;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 10px;
+    padding: 12px;   
+  overflow: visible;  
+  inset: 0;
+  background-color: color-mix(in srgb, var(--c-glass) 12%, transparent);
+  backdrop-filter: blur(8px) url('/assets/images/assets/glass-filter.svg') saturate(var(--saturation));
+/*backdrop-filter: blur(8px) url(#switcher) saturate(var(--saturation));*/
+  -webkit-backdrop-filter: blur(8px) saturate(var(--saturation));
+  box-shadow: inset 0 0 0 1px
+      color-mix(
+        in srgb,
+        var(--c-light) calc(var(--glass-reflex-light) * 10%),
+        transparent
+      ),
+    inset 1.8px 3px 0px -2px color-mix(in srgb, var(--c-light)
+          calc(var(--glass-reflex-light) * 90%), transparent),
+    inset -2px -2px 0px -2px color-mix(in srgb, var(--c-light)
+          calc(var(--glass-reflex-light) * 80%), transparent),
+    inset -3px -8px 1px -6px color-mix(in srgb, var(--c-light)
+          calc(var(--glass-reflex-light) * 60%), transparent),
+    inset -0.3px -1px 4px 0px
+      color-mix(
+        in srgb,
+        var(--c-dark) calc(var(--glass-reflex-dark) * 12%),
+        transparent
+      ),
+    inset -1.5px 2.5px 0px -2px
+      color-mix(
+        in srgb,
+        var(--c-dark) calc(var(--glass-reflex-dark) * 20%),
+        transparent
+      ),
+    inset 0px 3px 4px -2px color-mix(in srgb, var(--c-dark)
+          calc(var(--glass-reflex-dark) * 20%), transparent),
+    inset 2px -6.5px 1px -4px
+      color-mix(
+        in srgb,
+        var(--c-dark) calc(var(--glass-reflex-dark) * 10%),
+        transparent
+      ),
+    0px 1px 5px 0px
+      color-mix(
+        in srgb,
+        var(--c-dark) calc(var(--glass-reflex-dark) * 10%),
+        transparent
+      ),
+    0px 6px 16px 0px
+      color-mix(
+        in srgb,
+        var(--c-dark) calc(var(--glass-reflex-dark) * 8%),
+        transparent
+      );
+  transition: background-color 400ms cubic-bezier(1, 0, 0.4, 1),
+    box-shadow 400ms cubic-bezier(1, 0, 0.4, 1); 
+}
+
+.liquidGlass-text {
+  z-index: 3;
+}
+	
+.liquid-wrapper a, 
+.liquid-wrapper a:hover {
+  text-decoration: none;
+  background-image: none;
+}
+
+.liquid-wrapper {
+  display: flex;
+  gap: 25px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.menu,
+.menu > div {
+  padding: 0.4rem;
+  border-radius: 1.8rem;
+}
+
+.menu:hover {
+  border-radius: 1.8rem;
+}
+
+.menu > div > div {
+  font-size: 20px;
+  color: white;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.8rem;
+  transition: all 0.1s ease-in;
+}
+
+.menu > div > div:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: inset -2px -2px 2px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2px);
+}
+
+
+  /* Liquid Glass Menu */
+  @media (max-width:991px) {
+      
+.menu-dock {
+    position: fixed;
+    z-index: 9999;
+    bottom: 0px;
+    right: 50%;
+    transform: translate(50%,-50%);
+}
+
+}
+/* End Liquid Glass */
+ 
+
+
+
+}

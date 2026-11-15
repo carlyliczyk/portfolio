@@ -1,0 +1,948 @@
+@font-face {
+    font-family: 'reey';
+    src: url('/assets/fonts/reey-regular-webfont.woff2') format('woff2'), url('/assets/fonts/reey-regular-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'inter';
+    src: url('/assets/fonts/Inter-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'inter';
+    src: url('/assets/fonts/Inter-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'inter';
+    src: url('/assets/fonts/Inter-ExtraBold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+    h1, .h1 {
+        @apply text-[2.8rem] leading-[1.1em] lg:text-[60px] xl:text-[70px] text-black dark:text-white;
+    }
+
+    h2, .h2 {
+        @apply text-[2.2rem] leading-[1.1em] lg:text-[50px] text-black dark:text-white ;
+    }
+
+    h3, .h3 {
+        @apply text-[1.8rem] leading-[1.1em] lg:text-[34px] text-black dark:text-white ;
+    }
+    h4, .h4 {
+        @apply text-[1.35rem] leading-[1.3em] lg:text-[24px] text-black dark:text-white;
+    }
+    h5, .h5 {
+        @apply text-[1.15rem] leading-[1.3em]  lg:text-[18px] text-black dark:text-white;
+    }
+
+    h6, .h6 {
+        @apply text-[1rem] leading-[1.35em] lg:text-[16px] text-black dark:text-white;
+    }
+
+    p, .p {
+        @apply text-[1rem] leading-[1.5em] lg:text-[16px] text-gray dark:text-gray mb-[0.5em];
+    }
+
+}
+@layer utilities {
+
+    .hero h1 {
+        font-size: calc((50vw + 3rem) / 7);
+        line-height:1.1em;
+    }
+    .heading h2 {
+        @apply font-semibold h3
+    }
+
+    .card-title {
+        @apply font-semibold h6
+    }
+
+    p, .p, .project-brief li {
+        @apply text-gray-dark dark:text-gray-dark mb-[5px];
+    }
+    
+    ul.p {
+        margin-left: 20px;
+    }
+    .caption, .caption.wrapper p {
+        @apply text-[14px] !leading-[1.4em] text-gray-dark dark:!text-white;
+    }
+    .eyebrow {
+        @apply text-[15px] lg:text-[18px] !leading-[1.3em] mb-[5px] lg:mb-[10px] text-gray-dark dark:text-gray-dark;
+    }
+    .footnote {
+        @apply text-[0.85rem] !leading-[1.4em] dark:!text-white;
+    }
+    .accent {
+        @apply text-gray-dark
+    }
+    .portfolio li {
+        list-style-type: disc;
+        list-style-position: outside;
+        @apply mb-[0.5em];
+    }
+
+    .btn {
+        @apply inline-block rounded-2xl bg-primary py-4 px-7 text-center text-sm font-extrabold uppercase text-black transition hover:scale-105 hover:bg-secondary hover:text-white;
+    }
+    
+    .margins {
+        @apply !pl-[5%] !pr-[5%]
+    }
+    .margins-b {
+        @apply !pb-[5%]
+    }
+    .margins-sm {
+        @apply !pl-[5px] !pr-[5px]
+    }
+    .margins-b-sm {
+        @apply !pb-[5px]
+    }
+
+    .caption.wrapper {
+        @apply mr-[5%] ml-[5%] mt-[10px] p-0 
+    }
+    .spacer {
+        margin-bottom: 2rem;
+    }
+    .spacer-md {
+        margin-bottom: 4rem;
+    }
+    .spacer-lg {
+        margin-bottom: 8rem;
+    }
+    .gap {
+        @apply gap-[5px]
+    }
+
+}
+
+@layer components {
+
+    .body-border {
+        border-radius: 10px;
+        padding-right: 30px;
+        padding-left: 30px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    section a {
+        background-image: linear-gradient(#e0ff68,#e0ff68);
+        background-size: 0 100%;
+        background-repeat: no-repeat;
+        transition: .3s;
+      }
+    section a:hover {
+        color:#000;
+        background-size: 100% 100%;
+        transition: .3s;
+      }
+
+    .content-container {
+        @apply rounded-sm
+    }
+    .container {
+        @apply w-full !max-w-full
+    } 
+    a.outbound:after {
+        content: url('data:image/svg+xml; utf8, <svg width="14" height="14" viewBox="0 0 800 800" fill="currentColor" xmlns="http://www.w3.org/2000/svg"> <g id="Complete"> <g> <g> <polyline fill="currentColor" stroke="currentColor" stroke-width="66.6667" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="133.3333" points=" 623.3,413.3 623.3,176.7 386.7,176.7 "/> <line fill="none" stroke="currentColor" stroke-width="66.6667" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="133.3333" x1="176.7" y1="623.3" x2="570" y2="230"/> </g> </g></g> </svg>');
+        margin-left:5px;
+        display: inline-block;
+    }
+
+    section {
+        @apply bg-white dark:bg-dark relative spacer border border-gray dark:border-gray-dark mb-[30px] rounded-lg overflow-hidden
+    }
+    .project-grid section {
+        @apply border-none
+    }
+    section.dark {
+        @apply !bg-black
+    }
+    .wrapper {
+       @apply p-[5%]
+    }
+    
+    .border {
+        @apply border-gray dark:border-gray-dark rounded-md md:rounded-lg border-collapse;
+    }
+    .border-bottom {
+        @apply dark:!border-gray-dark;
+        border-bottom:1px solid #eee;
+    }
+    .App.light .grid-bkg {
+        max-width: 100%;
+        background-image: url(/assets/images/grid-tile-grey.svg);
+        background-position: 50%;
+        background-repeat: repeat-y;
+        background-size: 90%;
+    }
+    .grid-bkg.none {
+        background-image: none!important;
+    }
+    .project-grid {
+        grid-column-gap: 5px;
+        grid-row-gap: 0px;
+        text-align: left;
+        grid-template:
+            "Area-2 Area Area Area"
+            "Area-2 Area Area Area"
+            "Area-2 Area-3 Area-3 ." minmax(auto, 1fr) / minmax(200px, 1.5fr) 1fr 1fr 1fr;
+        align-content: start;
+        align-items: start;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .portfolio .project-grid {
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+    .portfolio-container {
+        @apply container relative z-[1] bg-white dark:bg-dark border spacer dark:text-white
+    }
+    .project-grid.wrapper {
+        padding-left:0px;
+        padding-right:0px;
+        padding-top:5%;
+        padding-bottom:5%;
+    }
+    .button-totop {
+        @apply fixed bottom-5 z-[51] right-[10px]
+    }
+    .button-home {
+        @apply fixed top-[10px] z-[51] right-[10px]
+    }
+    .button-totop > div, .button-home > div {
+        @apply flex h-10 w-10 items-center justify-center rounded-full border border-gray hover:border-primary focus:border-primary bg-black/70 text-white transition duration-500 hover:bg-dark dark:bg-dark dark:border-white dark:hover:bg-dark shadow
+    }
+    .filter button, .port-details .services .description span, .featured .role span, .portfolio .pill{
+        @apply shadow transition text-[.85rem] bg-white dark:text-gray-dark border rounded-[50px] border-gray hover:border-primary dark:!bg-dark dark:!border-gray-dark dark:hover:!bg-dark dark:hover:!border-primary;
+        padding: 8px 13px 7px;
+    }
+    .filter.active button {
+        @apply text-black font-semibold dark:text-white dark:!border-primary;
+    }
+    .featured .role span {
+        @apply bg-white hover:!bg-white
+    }
+    .card {
+        @apply shadow
+    }
+    .featured .project-info h3 {
+        @apply text-black dark:!text-white h4 font-semibold;
+    }
+    .featured .project-info p {
+        @apply caption text-black dark:!text-gray-dark mb-4;
+    }
+    .featured .project-info .link {
+        @apply text-black dark:text-white
+
+    }
+    .featured .project-thumb {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+}
+    .featured button {
+        display: flex;
+        align-items: center;
+        font-weight:600;
+    }
+    .featured button:after {
+        content: url('data:image/svg+xml; utf8, <svg width="8" height="13" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M1.05005 10.7998L5.51089 6.6576C5.93695 6.26197 5.93695 5.58764 5.51089 5.19201L1.05005 1.0498" stroke="currentColor" strokeWidth="3" strokeLinecap="round" /> </svg>');
+        margin-left: 15px;
+        transition: all 0.4s ease;
+        height: 22px;
+        @apply stroke-black dark:!text-white dark:!stroke-white;
+    }
+    .featured button:hover:after {
+        margin-left: 20px;
+        transition: all 0.4s ease;
+    }
+   .featured .role, .port-details .services .description{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .featured a:hover, .featured a {
+        background-image: none;
+    }
+    .projects .project-wrapper {
+        @apply relative border-gray-dark bg-white transition hover:border-primary dark:bg-dark dark:border-white dark:hover:border-primary;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .projects .project-wrapper img {
+        aspect-ratio: 6/5;
+        @apply w-full border rounded-[20px];
+        
+    }
+    .projects .project-wrapper a {
+        background-image: none;
+    }
+    .projects .project-wrapper .project-info {
+        @apply pt-[10px] pb-[20px]
+    }
+    .projects h3 {
+        @apply lg:h5 h4 font-semibold text-black dark:text-white
+    }
+    .projects p {
+        @apply caption
+    }
+
+    .portfolio p {
+       @apply mb-[0.5em];
+    }
+
+        /* PORTFOLIO DETAIL */
+    .portfolio section {
+        @apply border shadow rounded-lg dark:!border-gray-dark
+    }
+    .portfolio .port-header {
+        @apply grid grid-cols-1 lg:grid-cols-6 lg:gap-6 text-black dark:text-white
+    }
+    .portfolio .project-img img {
+         @apply rounded-lg w-full
+    }
+    .portfolio .port-title {
+        @apply col-span-4 pb-4
+    }
+    .portfolio .port-details {
+        @apply col-span-4 lg:col-span-2 pb-0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .portfolio .port-title .wrapper {
+        padding-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .portfolio .port-title h1 {
+        @apply h1 font-bold mb-5
+    }
+    .portfolio .port-title .project-logo {
+        @apply mb-6 inline-block p-[8px] lg:p-[8px] rounded-[5px] border border-gray dark:bg-white
+    }
+
+    .portfolio .port-title .project-logo svg,  .portfolio .port-title .project-logo img {
+        @apply h-8 w-8 lg:w-12 lg:h-12
+    }
+    .portfolio .port-details > div {
+        @apply grid grid-cols-3 lg:grid-cols-8 gap-4 !pl-0 !pr-0 border-bottom dark:border-gray-dark h-full;
+        align-items: center;
+        height: 100%;
+    }
+    .portfolio .port-details > div:last-child {
+        @apply  lg:border-bottom lg:border-gray dark:border-gray-dark border-b-0
+    }
+    .portfolio .port-details > div  > div:first-child {
+        @apply col-span-3
+    }
+    .portfolio .port-details > div  > div:last-child {
+        @apply col-span-5
+    }
+    .portfolio .port-details .wrapper:nth-child(n+2) {
+        @apply pt-[5%] pb-[5%]
+    }
+    .portfolio .port-details .heading {
+        @apply p font-semibold uppercase text-black dark:text-white
+
+    }
+    .portfolio .accordion button {
+        @apply pl-0 !bg-transparent border-bottom dark:border-gray-dark
+    }
+    .portfolio .accordion button:focus {
+        box-shadow: none!important;
+    }
+    .portfolio .sec-title, .portfolio .port-header { 
+        @apply rounded-l p-[5%]
+     }
+
+    .portfolio .sec-title {
+        @apply grid items-start grid-cols-1 lg:grid-cols-6 dark:bg-dark text-black dark:text-white gap-3 lg:gap-10 mb-[10px] mt-[10px] lg:mt-[0px] border border-white dark:border-none dark:bg-none
+    }
+    .App.dark .portfolio .sec-title {
+       @apply spacer mt-[0px] items-start
+    }
+    .portfolio .sec-title .title {
+        @apply font-bold h2 mb-3 lg:mb-0
+    }
+    .portfolio .sec-title .details p {
+        @apply mb-3 lg:mb-3
+    }
+    .portfolio .sec-title .details p:last-child {
+        @apply lg:mb-0
+    }
+    .portfolio .sec-subtitle {
+        @apply spacer h4 font-semibold mb-md
+    }
+    .portfolio .sec-subtitle.line {
+        @apply flex 
+    }
+    .portfolio .sec-subtitle.line:before {
+    content: "";
+    height: 34px;
+    display: inline-block;
+    width: 3px;
+    background-color: #E0FF68;
+    margin-right: 8px;
+}
+    .portfolio .section-icon {
+        @apply mb-6 inline-block text-dark dark:text-white p-[8px] lg:p-[10px] rounded-[10px] border border-gray dark:bg-dark
+    }
+    .portfolio .section-icon svg, .portfolio .section-icon img {
+        @apply h-5 lg:h-7
+    }
+    .portfolio .card-row {
+        @apply grid grid-cols-12 justify-between gap-6;
+    }
+    .portfolio .card-row > div {
+        @apply grid;
+    }
+    .portfolio .card-row .card {
+        @apply rounded-[20px] p-[20px] border border-gray bg-white dark:bg-dark transition duration-500 hover:border-primary shadow;
+    }
+    .portfolio .card-row .card .title {
+        @apply h5 font-semibold mb-1
+    }
+    .portfolio .card-row .card p {
+        @apply text-gray-dark dark:text-gray-dark
+    }
+    .portfolio .card-row .card p.tag {
+        @apply italic mb-3 caption !text-gray-dark dark:!text-gray-dark
+    }
+    .portfolio .colours .card-row {
+        @apply grid grid-cols-4
+    }
+    .portfolio .colours .card-row .colour-card {
+        @apply col-span-2 lg:col-span-1
+    }
+    .portfolio .colours .card.colour-card {
+        @apply flex justify-center p-4; 
+    }
+    .portfolio .colours .card.colour-card p {
+        @apply text-[.8rem] text-black dark:text-black
+    }
+    .portfolio.fluent .card p {
+        @apply text-[1rem]
+    }
+    .portfolio .colours .card-row .primary {
+        @apply col-span-8 gap-1
+    }
+    .portfolio .colours .card-row .secondary {
+        @apply col-span-4 gap-1
+    }
+    .portfolio .colours .card-row.colour-grid .colour-card {
+        @apply col-span-4 lg:col-span-1 items-start justify-start min-h-[10vh]
+    }
+    .portfolio .tech ul {
+        @apply flex flex-wrap gap-4 md:justify-start md:gap-7 ml-0 pl-0
+    }
+    .portfolio .tech li {
+        @apply flex items-center justify-center rounded-[10px] p-[13px] border border-gray bg-white dark:bg-white transition duration-500 hover:border-primary shadow
+    }
+    .portfolio .tech li svg, .portfolio .tech li img {
+        @apply h-6 w-6 lg:h-7 lg:w-7
+    }
+    .portfolio .port-details .tech li {
+        @apply flex items-center justify-center rounded-[0px] p-[0px] bg-transparent border-transparent transition duration-500 hover:border-transparent shadow-none
+    }
+    .portfolio .port-details .tech li svg, .portfolio .port-details .tech li img {
+        @apply h-7 w-7 lg:h-8 lg:w-8
+    }
+    .portfolio .key-features {
+        @apply flex border-t gap-2 border-gray pt-md mt-md text-[0.85rem] flex-col sm:flex-row items-start md:items-center 
+    }
+
+    .portfolio.betterlives .colours .card-row, .portfolio .colours .card-row.colour-grid {
+        @apply grid grid-cols-12 gap-1
+    }
+    .portfolio.betterlives .card-row.betterlives > div {
+        @apply grid col-span-12 col-span-12
+    }
+    .portfolio.betterlives .colours .card.colour-card p {
+        @apply text-[.8rem] text-white dark:text-white
+    }
+    .portfolio.betterlives .project-outline .img, .portfolio.betterlives .project-outline .desc{
+        z-index:10!important;
+     }
+    .portfolio.betterlives .project-outline div.bkg {
+        @apply absolute z-0;
+    }
+    .accordion > div {
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-bottom: 1rem;
+    }
+    .swiper-button-next2, .swiper-button-prev2 {
+        @apply mt-0 flex h-10 w-10 bg-gray items-center rounded-[10px] border justify-center border-solid border-gray transition after:text-[0px] hover:!bg-primary dark:bg-dark dark:border-white hover:border-primary rtl:rotate-180 hover:!text-black;
+    }
+    .swiper-button-next2 svg, .swiper-button-prev2 svg {
+        @apply text-black dark:text-white hover:!text-black w-full;
+    }
+
+    .colour-module {
+        @apply border border-gray rounded-sm lg:rounded-lg min-h-[180px];
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+    .colour-module .wrapper {
+        padding: 20px;
+    }
+     .colour-scale {
+        @apply border border-[#ffffff70] rounded-lg md:rounded-xl;
+        overflow:hidden;
+        border-collapse: collapse;
+        display:flex;
+    }
+
+    .colour-scale .scale {
+        display: flex;
+        align-items: stretch;
+        width: 100%;
+        align-content: center;
+        padding: 5px;
+        justify-content: center;
+    }
+
+    .colour-scale .scale-1 {
+        background-color: #000000b0;
+    }
+    .colour-scale .scale-2 {
+        background-color: #00000096;
+    }
+    .colour-scale .scale-3 {
+        background-color: #00000076;
+    }
+    .colour-scale .scale-4 {
+        background-color: transparent;
+    }
+    .colour-scale .scale-4 {
+        background-color: transparent;
+    }
+    .colour-scale  .scale.scale-5 {
+        background-color: #ffffff47;
+    }
+    .colour-scale  .scale.scale-6 {
+        background-color: #ffffff6d;
+    }
+    .colour-scale  .scale.scale-7 {
+        background-color: #ffffff9c;
+    }
+
+    .colour-module .colour-scale .dot {
+        height: 10px;
+        width: 10px;
+        background-color: #fff;
+        border-radius: 50px;
+    }
+    .colour-module.white .colour-scale {
+       @apply border-[#0000000e]; 
+    }
+    .colour-module.white .colour-scale .dot {
+       background-color: #000; 
+    }
+
+    .analysis-table table {
+        width: 100%;
+        max-width:1200px;
+    }
+    .analysis-table table * {
+        @apply text-gray-dark text-[13px] md:text-[16px] leading-[1.3em] 
+    }
+    .analysis-table table thead * {
+        @apply text-dark
+    }
+    .analysis-table table tr {
+        @apply border-b border-gray-dark
+    }
+    .analysis-table table tr:hover * {
+        @apply bg-gray-light text-dark
+    }
+    .analysis-table table thead td {
+        border-left:none;
+        border-right:none;
+
+    }
+    .analysis-table table td {
+        @apply border-gray-dark border-l border-r lg:min-w-[150px] min-w-[60px];
+        padding: 20px 0;
+        text-align: center;
+
+    }
+    .analysis-table table td:first-child {
+        @apply border-gray-dark border-l-0 border-r-0;
+        text-align: left;
+
+    }
+
+    .analysis-table table td.highlight {
+        @apply bg-gray border-gray
+    }
+
+
+
+    /* CLIENT STYLES */
+    .bkg-fluent {
+        @apply bg-gradient-to-tl from-fluentBlue-light to-white dark:bg-none dark:!bg-dark;
+    }
+    /* NFT Landing Page CSS */
+    .heading-gradiant {
+        @apply mb-12;
+    }
+    .heading-gradiant h4 {
+        @apply relative z-[1] text-3xl font-black uppercase leading-[50px] text-black before:absolute before:top-5 before:z-[-1] before:h-6
+        before:w-[100px] before:bg-primary/20 ltr:pl-0.5 ltr:before:left-0 ltr:before:right-auto rtl:pr-0.5 rtl:before:right-0 rtl:before:left-auto dark:text-white md:text-[40px] md:leading-[60px] md:before:h-[30px];
+    }
+    .heading-gradiant h4 span {
+        @apply bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent;
+    }
+    .heading-gradiant p {
+        @apply mt-3 font-semibold;
+    }
+
+
+    /* --------- NFT - END -------- */
+
+    /* Filter */
+
+    .project.hidden {
+        @apply animate-fadeIn;
+    }
+    .project.block {
+        @apply animate-fadeIn;
+    }
+
+    /* Light - Dark Mode */
+
+    .dark .light-mode-btn {
+        @apply block;
+    }
+    .dark .dark-mode-btn {
+        @apply hidden;
+    }
+
+    /* Header */
+    header {
+        right: 25px;
+        left: 30px;
+
+    }
+    header .wrapper {
+        padding-right:2em;
+        padding-left:2em;
+        padding-top:1em;
+        padding-bottom:1em;
+    }
+    header .menus {
+        @apply fixed top-0 z-[52] h-screen w-full max-w-sm gap-9 bg-white transition-all duration-500 ltr:-right-full rtl:-left-full dark:bg-transparent lg:static lg:h-auto lg:max-w-none;
+    }
+    header .menus > ul {
+        @apply relative flex  flex-col divide-y divide-gray/10  font-semibold text-black  lg:flex-row lg:items-center lg:gap-11 lg:divide-y-0  lg:p-0 lg:text-white;
+    }
+    header .menus > ul li > a {
+        @apply flex items-center justify-between transition text-black hover:text-gray-dark dark:text-white dark:hover:text-primary dark:!bg-transparent px-0 hover:lg:scale-110;
+    }
+    header .menus > ul li > a.active {
+        @apply text-secondary lg:scale-110 dark:text-primary;
+    }
+    header .menus .submenu {
+        @apply invisible z-50 mt-5 hidden grid-cols-1 gap-x-4 rounded-[20px] py-3 text-sm font-medium text-black opacity-0 transition-all dark:text-white lg:absolute lg:top-full lg:grid lg:min-w-max rtl:lg:translate-x-1/4 ltr:lg:-translate-x-1/4 lg:grid-cols-3 lg:bg-[#F0F4F7] lg:shadow-lg lg:dark:bg-gray-dark rtl:xl:-right-1/2 ltr:xl:-left-1/2 xl:grid-cols-4;
+    }
+    .submenu {
+        @apply group-hover:visible group-hover:mt-0 group-hover:grid group-hover:opacity-100;
+    }
+    header .menus .submenu a {
+        @apply block py-2.5 px-8 transition hover:text-secondary lg:px-5 hover:lg:scale-105;
+    }
+    header .menus .submenu a.active {
+        @apply text-secondary lg:scale-105;
+    }
+
+    header .logo-lock { 
+        @apply flex gap-[24px] items-center
+    }
+    header .logo-lock .name {
+        @apply text-black dark:text-white h5 font-semibold mb-0
+    }
+    .text-stroke {
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: #222a36;
+    }
+
+  /* REMOVE AFTER MENU TRANSITON */  
+    .menu-float {
+        position: fixed;
+        left: 0px;
+        width: 100%;
+        z-index:11;
+
+    }
+    .menu-float.bottom {
+        bottom: 20px;
+    }
+    .menu-float .menu-float-inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .menu-float .menu-float-wrap nav {
+        background: transparent;
+        padding: 0;
+    }
+    .menu-float .menu-float-wrap [data-testid=flowbite-navbar-collapse] {
+        @apply p-[10px] shadow bg-black/70 dark:bg-black border-gray-dark rounded-[10px] items-center ;
+    }
+    .menu-float .menu-float-wrap [data-testid=flowbite-navbar-collapse] ul > div {
+        @apply flex flex-col items-center gap-[8px] h-[85px] bg-black/50 rounded-[10px] p-[8px] mr-[4px] ml-[4px]
+    }
+    .menu-float .menu-float-wrap [data-testid=flowbite-navbar-collapse] ul > div:first-child {
+        margin-left: 0px;
+    }
+    .menu-float .menu-float-wrap [data-testid=flowbite-navbar-collapse] ul > div .title-container p  {
+        @apply text-[10px]
+
+    }
+    .menu-float .menu-float-wrap [data-testid=flowbite-navbar-collapse] ul > div .button-container  {
+        @apply flex gap-[8px]
+
+    }
+    .menu-float .menu-float-wrap [data-testid=flowbite-navbar-collapse] ul > div a {
+        display: block;
+    }
+    .menu-float .menu-float-wrap svg, .menu-float .menu-float-wrap img {
+        @apply h-6 dark:text-white
+    }
+    .menu-float .menu-float-wrap a  {
+        @apply text-white p-[10px] border bg-gray-dark/10 border-gray-dark rounded-[10px] transition;
+    }
+    .menu-float .menu-float-wrap a.active, .menu-float .menu-float-wrap a:hover, .liquid-wrapper a:active {
+        @apply text-white transition border-primary cursor-pointer
+    }
+
+    /* Creative Agency Page CSS 
+    .text-color {
+        @apply bg-[url(/assets/images/creative/color.png)] bg-clip-text bg-top bg-no-repeat text-transparent;
+    }*/
+}
+
+/* responsive menu */
+
+header .menus.open-menus {
+    @apply overflow-y-auto ltr:right-0 rtl:left-0;
+}
+
+/* sticky header */
+
+.sticky-header {
+   
+}
+
+/* lightbox */
+
+.fancybox__content > .carousel__button.is-close {
+    @apply rtl:left-0;
+}
+
+/* accordion */
+
+.ac.is-active .ac-trigger .trigger-icon {
+    @apply !border-black !text-black dark:!border-gray-dark dark:!text-white;
+}
+
+.ac.is-active .ac-trigger .trigger-icon svg path {
+    @apply first:hidden;
+}
+.open-search-bar {
+    @apply w-full;
+}
+.portfolio .accordion {
+    @apply border-none hover:bg-transparent py-0
+}
+.portfolio .accordion > div {
+    @apply !border-b !border-t-0 !border-gray dark:!border-gray-dark !rounded-none dark:bg-dark
+}
+.portfolio .accordion button h2 span {
+    @apply p text-black dark:text-white font-semibold uppercase bg-transparent
+}
+.portfolio .accordion p {
+    dark:text-gray-dark
+}
+.portfolio ul, 
+.portfolio ol {
+    @apply pl-[20px];
+}
+
+
+/* apex chart */
+/*
+.dark .apexcharts-canvas .apexcharts-tooltip.apexcharts-theme-light,
+.dark .apexcharts-canvas .apexcharts-xaxistooltip.apexcharts-theme-light {
+    box-shadow: none;
+    @apply border-[#050717cc] bg-[#000000] text-white;
+}
+
+.dark .apexcharts-canvas .apexcharts-xaxistooltip-bottom:before,
+.dark .apexcharts-canvas .apexcharts-xaxistooltip-bottom:after {
+    @apply border-b-[#050717cc];
+}
+
+.dark .apexcharts-canvas .apexcharts-tooltip-series-group.apexcharts-active {
+    @apply text-white;
+}
+
+.dark .apexcharts-canvas .apexcharts-tooltip.apexcharts-theme-light .apexcharts-tooltip-title {
+    @apply border-[#060818] bg-[#060818];
+}
+
+.dark .apexcharts-canvas .apexcharts-tooltip.apexcharts-theme-light {
+    box-shadow: none;
+}
+
+[dir='rtl'] .apexcharts-tooltip-marker {
+    @apply mr-0 ml-2.5;
+}*/
+/* Hotel & resort */
+.book-form input[type='date']::-webkit-calendar-picker-indicator {
+    @apply invert;
+}
+
+/* Photography our Team */
+
+.our-team .swiper-wrapper {
+    @apply items-center;
+}
+
+.our-team .swiper-slide img {
+    @apply h-[390px];
+}
+
+.our-team .swiper-slide.swiper-slide-prev img,
+.our-team .swiper-slide.swiper-slide-next img {
+    @apply h-[478px];
+}
+
+.our-team .swiper-slide.swiper-slide-active img {
+    @apply h-[566px];
+}
+
+@media screen and (max-width: 1200px) {
+    .our-team .swiper-slide img {
+        @apply h-[300px];
+    }
+
+    .our-team .swiper-slide.swiper-slide-prev img,
+    .our-team .swiper-slide.swiper-slide-next img {
+        @apply h-[400px];
+    }
+
+    .our-team .swiper-slide.swiper-slide-active img {
+        @apply h-[500px];
+    }
+}
+
+@media screen and (max-width: 767px) {
+    section {
+        @apply mb-[20px]
+    }
+    .grid-bkg {
+        background-image: none;
+    }
+    .button-totop {
+        @apply fixed bottom-5 z-[51] right-[20px] bottom-[20px];
+    }
+    .menu-float.bottom {
+        @apply bottom-5
+    }
+    .menu-float .menu-float-inner {
+        @apply block ml-[20px] mr-[20px]
+    }
+    .menu-float [data-testid=flowbite-navbar-toggle] { 
+        @apply flex h-10 w-10 rounded-[50px] items-center justify-center rounded-full border border-gray hover:border-primary focus:border-primary bg-black/70 text-white transition duration-500 hover:bg-dark dark:bg-dark dark:border-white dark:hover:bg-dark shadow;
+    }
+    .menu-float [data-testid=flowbite-navbar-toggle] svg {
+        stroke-width: 1px!important;
+        height: 16px;
+    }
+    .menu-float .menu-float-wrap [data-testid=flowbite-navbar-collapse] {
+        @apply mt-[10px] dark:bg-black border dark:border-gray
+    }
+    .menu-float .menu-float-wrap [data-testid=flowbite-navbar-collapse] ul {
+        @apply mt-[0px] flex flex-col items-start
+    }
+    .menu-float .menu-float-wrap [data-testid=flowbite-navbar-collapse] ul > div {
+        margin:2.5px 0;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .menu-float .menu-float-wrap [data-testid=flowbite-navbar-collapse] ul .title-container {
+        @apply w-full
+    }
+    /*.body-border {
+       padding-right: 20px;
+       padding-top: 20px;
+       padding-bottom: 20px;
+       padding-left: 20px;
+    }*/
+    .project-grid.wrapper {
+        padding-top:5%;
+        padding-bottom:5%;
+    }
+    header .wrapper {
+        padding-right:20px;
+        padding-left:20px;
+        padding-top:20px;
+        padding-bottom:20px;
+    }
+    header .wrapper {
+        display: flex;
+        align-items: flex-start;
+    }
+    header .logo-lock {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .spacer {
+        margin-bottom: 20px;
+    }
+    .spacer-md {
+        margin-bottom: 3rem;
+    }
+    .spacer-lg {
+        margin-bottom: 6rem;
+    }
+    .filter button, .port-details .services .description span, .featured .role span, .portfolio .pill{
+        @apply shadow transition text-[.8rem];
+        padding: 6px 15px 5px
+    }
+    .our-team .swiper-slide img {
+        @apply !h-[300px];
+    }
+}
